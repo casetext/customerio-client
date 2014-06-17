@@ -83,4 +83,5 @@ git push origin feature/my-branch
 
 # Versions
 
+- 0.1.1: Fixed bug in client authentication logic.
 - 0.1.0: Initial release.

@@ -12,7 +12,7 @@ var https = require('https')
  * @param {String} apikey - Your Customer.IO API key.
  */
 function Client(siteid, apikey) {
-  if (!_.isString(siteid) || !_.isString(secret)) {
+  if (!_.isString(siteid) || !_.isString(apikey)) {
     throw new Error('Must supply both a site key and an API key');
   }
 

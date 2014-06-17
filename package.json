@@ -1,0 +1,20 @@
+{
+  "name": "customerio-client",
+  "version": "0.1.0",
+  "description": "A Node client for Customer.io that isn't terrible.",
+  "main": "customerio-client.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^1.20.1",
+    "chai": "^1.9.1",
+    "jsdoc": "^3.3.0-alpha8"
+  },
+  "dependencies": {
+    "q": "^1.0.1",
+    "lodash": "^2.4.1"
+  }
+}

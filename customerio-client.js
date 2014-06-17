@@ -32,7 +32,7 @@ function rejectErrors(res) {
     })
     .on('end', function() {
       var errorText = responseText;
-      if (res.getHeader('Content-Type') === 'application/json') {
+      if (res.headers['content-type'] === 'application/json') {
         errorText = JSON.parse(responseText).meta.error;
       }
       deferred.reject(new Error('customer.io returned error: "' + errorText + '"'));

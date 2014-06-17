@@ -6,6 +6,10 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/casetext/customerio-client"
+  },
   "author": "Harry Schmidt <goldibex@casetext.com>",
   "license": "MIT",
   "devDependencies": {

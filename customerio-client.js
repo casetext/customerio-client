@@ -74,7 +74,7 @@ Client.prototype.identify = function createUser(customerid, email, data) {
 
   var deferred = Q.defer()
     , meta = this._requestData(customerid, 'PUT')
-    , jsonData = JSON.stringify(data);
+    , jsonData = new Buffer(JSON.stringify(data));
 
   meta.headers['Content-Length'] = jsonData.length;
 
@@ -82,7 +82,7 @@ Client.prototype.identify = function createUser(customerid, email, data) {
   .on('error', function(e) {
     deferred.reject(e);
   })
-  .end(jsonData, 'utf8');
+  .end(jsonData);
 
   return deferred.promise;
 };
@@ -128,7 +128,7 @@ Client.prototype.track = function track(customerid, name, data) {
 
   var deferred = Q.defer()
     , meta = this._requestData(customerid, 'POST', '/events')
-    , jsonData = JSON.stringify(eventObject);
+    , jsonData = new Buffer(JSON.stringify(eventObject));
 
   meta.headers['Content-Length'] = jsonData.length;
 
@@ -136,7 +136,7 @@ Client.prototype.track = function track(customerid, name, data) {
   .on('error', function(e) {
     deferred.reject(e);
   })
-  .end(jsonData, 'utf8');
+  .end(jsonData);
 
   return deferred.promise;
 };

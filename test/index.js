@@ -3,8 +3,8 @@
 
 var expect = require('chai').expect;
 
-if (!process.env.CUSTOMERIO_SITE_KEY || !process.env.CUSTOMERIO_API_KEY) {
-  throw new Error('Set CUSTOMERIO_SITE_KEY and CUSTOMERIO_API_KEY in your env.');
+if (!process.env.CUSTOMERIO_ID || !process.env.CUSTOMERIO_KEY) {
+  throw new Error('Set CUSTOMERIO_ID and CUSTOMERIO_KEY in your env.');
 }
 
 describe('the customerio-client module', function() {
@@ -21,8 +21,8 @@ describe('the customerio-client module', function() {
   it('takes a Customer.IO site key and secret', function() {
     expect(function() {
       new CustomerIO(
-        process.env.CUSTOMERIO_SITE_KEY,
-        process.env.CUSTOMERIO_API_KEY
+        process.env.CUSTOMERIO_ID,
+        process.env.CUSTOMERIO_KEY
       );
     }).not.to.throw();
 
@@ -35,8 +35,8 @@ describe('the customerio-client module', function() {
     var cio;
     beforeEach(function() {
       cio = new CustomerIO(
-        process.env.CUSTOMERIO_SITE_KEY,
-        process.env.CUSTOMERIO_API_KEY
+        process.env.CUSTOMERIO_ID,
+        process.env.CUSTOMERIO_KEY
       );
     });
 

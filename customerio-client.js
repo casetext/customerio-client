@@ -5,6 +5,11 @@ var https = require('https')
   , Q = require('q')
   , _ = require('lodash');
 
+var agent = new https.Agent({
+  keepAlive: true,
+  maxSockets: Infinity
+});
+
 /**
  * A client connection to the Customer.IO API.
  * @constructor
@@ -43,6 +48,7 @@ function rejectErrors(res) {
 /** @private */
 Client.prototype._requestData = function(customerid, method, extraPath) {
   return {
+    agent: agent,
     hostname: 'track.customer.io',
     path: '/api/v1/customers/' + customerid + (extraPath ? extraPath : ''),
     auth: this.siteid + ':' + this.secret,
